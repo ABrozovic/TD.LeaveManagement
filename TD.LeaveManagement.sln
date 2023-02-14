@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32421.90
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{91A50D67-94E4-4805-875A-EFB07671D324}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{74CD54BF-12A1-484F-A603-8929421CC502}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "API", "API", "{94ECB7AA-92B0-42DB-A28C-22439A20F477}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{F437D089-2056-4076-9289-DAE02DF2C900}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{3A69023B-D1A0-498D-A466-FAB0997790D9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{52A19048-A2F6-485F-A0CF-E7652A4B5698}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TD.LeaveManagement.Domain", "TD.LeaveManagement.Domain\TD.LeaveManagement.Domain.csproj", "{ED2C4E47-FB91-4573-859E-7EBE242A4C09}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D26B13A7-B026-4980-9030-6EA8F6F15B55}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ED2C4E47-FB91-4573-859E-7EBE242A4C09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED2C4E47-FB91-4573-859E-7EBE242A4C09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED2C4E47-FB91-4573-859E-7EBE242A4C09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED2C4E47-FB91-4573-859E-7EBE242A4C09}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{94ECB7AA-92B0-42DB-A28C-22439A20F477} = {91A50D67-94E4-4805-875A-EFB07671D324}
+		{F437D089-2056-4076-9289-DAE02DF2C900} = {91A50D67-94E4-4805-875A-EFB07671D324}
+		{3A69023B-D1A0-498D-A466-FAB0997790D9} = {91A50D67-94E4-4805-875A-EFB07671D324}
+		{52A19048-A2F6-485F-A0CF-E7652A4B5698} = {91A50D67-94E4-4805-875A-EFB07671D324}
+		{ED2C4E47-FB91-4573-859E-7EBE242A4C09} = {F437D089-2056-4076-9289-DAE02DF2C900}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {761BC460-38F8-4A77-9D6A-C47A9E1A874D}
+	EndGlobalSection
+EndGlobal
