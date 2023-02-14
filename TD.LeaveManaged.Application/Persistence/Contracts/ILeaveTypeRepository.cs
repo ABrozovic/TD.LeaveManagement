@@ -7,7 +7,7 @@ using TD.LeaveManagement.Domain;
 
 namespace TD.LeaveManaged.Application.Persistence.Contracts
 {
-    public interface ILeaveType : IGenericRepository<LeaveType>
+    public interface ILeaveTypeRepository : IGenericRepository<LeaveType>
     {
     }
 }
