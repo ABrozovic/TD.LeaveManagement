@@ -22,6 +22,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.editorconfig = .editorconfig
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TD.LeaveManaged.Application", "TD.LeaveManaged.Application\TD.LeaveManaged.Application.csproj", "{9F319048-0CF6-469A-869C-3545D537C462}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -32,6 +34,10 @@ Global
 		{ED2C4E47-FB91-4573-859E-7EBE242A4C09}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ED2C4E47-FB91-4573-859E-7EBE242A4C09}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ED2C4E47-FB91-4573-859E-7EBE242A4C09}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F319048-0CF6-469A-869C-3545D537C462}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F319048-0CF6-469A-869C-3545D537C462}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F319048-0CF6-469A-869C-3545D537C462}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F319048-0CF6-469A-869C-3545D537C462}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -42,6 +48,7 @@ Global
 		{3A69023B-D1A0-498D-A466-FAB0997790D9} = {91A50D67-94E4-4805-875A-EFB07671D324}
 		{52A19048-A2F6-485F-A0CF-E7652A4B5698} = {91A50D67-94E4-4805-875A-EFB07671D324}
 		{ED2C4E47-FB91-4573-859E-7EBE242A4C09} = {F437D089-2056-4076-9289-DAE02DF2C900}
+		{9F319048-0CF6-469A-869C-3545D537C462} = {F437D089-2056-4076-9289-DAE02DF2C900}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {761BC460-38F8-4A77-9D6A-C47A9E1A874D}
