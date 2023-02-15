@@ -9,6 +9,7 @@ namespace TD.LeaveManaged.Application.Persistence.Contracts
 {
     public interface ILeaveRequestRepository : IGenericRepository<LeaveRequest>
     {
-
+        Task<LeaveRequest> GetLeaveRequestWithDetail(int Id);
+        Task<List<LeaveRequest>> GetLeaveRequestsWithDetail();
     }
 }
