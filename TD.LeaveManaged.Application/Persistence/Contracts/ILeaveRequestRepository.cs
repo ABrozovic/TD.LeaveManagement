@@ -11,5 +11,7 @@ namespace TD.LeaveManaged.Application.Persistence.Contracts
     {
         Task<LeaveRequest> GetLeaveRequestWithDetail(int Id);
         Task<List<LeaveRequest>> GetLeaveRequestsWithDetail();
+
+        Task ChangeApprovalStatus(LeaveRequest leaveRequest, bool? approvalStatus);
     }
 }
