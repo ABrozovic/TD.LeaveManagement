@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TD.LeaveManaged.Application.DTOs.LeaveType.Validators;
+using TD.LeaveManaged.Application.Exceptions;
 using TD.LeaveManaged.Application.Features.LeaveTypes.Requests.Commands;
 using TD.LeaveManaged.Application.Persistence.Contracts;
 using TD.LeaveManagement.Domain;
@@ -23,7 +25,13 @@ namespace TD.LeaveManaged.Application.Features.LeaveTypes.Handlers.Commands
         }
         public async Task<int> Handle(CreateLeaveTypeCommand request, CancellationToken cancellationToken)
         {
-            var leaveType = _mapper.Map<LeaveType>(request.leaveTypeDto);
+            var validator = new CreateLeaveTypeDtoValidator();
+            var validationResult = await validator.ValidateAsync(request.LeaveTypeDto);
+
+            if (validationResult.IsValid == false)
+                throw new ValidationException(validationResult);
+
+            var leaveType = _mapper.Map<LeaveType>(request.LeaveTypeDto);
             leaveType= await _leaveTypeRepository.Add(leaveType);
             return leaveType.Id;
         }

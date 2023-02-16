@@ -10,6 +10,6 @@ namespace TD.LeaveManaged.Application.Features.LeaveRequests.Requests.Commands
 {
     public class CreateLeaveRequestDetailCommand :IRequest<int>
     {
-        public LeaveRequestDto leaveRequestDto { get; set; }
+        public CreateLeaveRequestDto leaveRequestDto { get; set; }
     }
 }

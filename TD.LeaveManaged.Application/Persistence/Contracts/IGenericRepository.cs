@@ -8,6 +8,7 @@ namespace TD.LeaveManaged.Application.Persistence.Contracts
 {
     public interface IGenericRepository<T> where T : class
     {
+        Task<bool> Exists(int id);
         Task<T> Get(int id);
         Task<IReadOnlyList<T>> GetAll();
         Task<T> Add(T entity);
