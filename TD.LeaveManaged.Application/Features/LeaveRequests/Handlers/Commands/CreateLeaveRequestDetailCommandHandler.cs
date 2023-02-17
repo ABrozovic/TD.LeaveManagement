@@ -8,12 +8,13 @@ using System.Threading.Tasks;
 using TD.LeaveManaged.Application.DTOs.LeaveRequest.Validators;
 using TD.LeaveManaged.Application.Exceptions;
 using TD.LeaveManaged.Application.Features.LeaveRequests.Requests.Commands;
+using TD.LeaveManaged.Application.Features.LeaveRequests.Responses;
 using TD.LeaveManaged.Application.Persistence.Contracts;
 using TD.LeaveManagement.Domain;
 
 namespace TD.LeaveManaged.Application.Features.LeaveRequests.Handlers.Commands
 {
-    public class CreateLeaveRequestDetailCommandHandler:IRequestHandler<CreateLeaveRequestDetailCommand, int>
+    public class CreateLeaveRequestDetailCommandHandler : IRequestHandler<CreateLeaveRequestDetailCommand, LeaveRequestCommandResponse>
     {
         private readonly ILeaveRequestRepository _leaveRequestRepository;
         private readonly ILeaveTypeRepository _leaveTypeRepository;
@@ -26,16 +27,26 @@ namespace TD.LeaveManaged.Application.Features.LeaveRequests.Handlers.Commands
             _mapper = mapper;
         }
 
-        public async Task<int> Handle(CreateLeaveRequestDetailCommand request, CancellationToken cancellationToken)
+        public async Task<LeaveRequestCommandResponse> Handle(CreateLeaveRequestDetailCommand request, CancellationToken cancellationToken)
         {
+            var response = new LeaveRequestCommandResponse();
             var validator = new CreateLeaveRequestDtoValidator(_leaveTypeRepository);
             var validationResult = await validator.ValidateAsync(request.leaveRequestDto);
             if (validationResult.IsValid == false)
-                throw new ValidationException(validationResult);
+            {
+                response.Success = false;
+                response.Message = "Could not create a leave request in this moment.";
+                response.Errors = validationResult.Errors.Select(x => x.ErrorMessage).ToList();
+            } 
 
             var leaveRequest = _mapper.Map<LeaveRequest>(request.leaveRequestDto);
             leaveRequest= await _leaveRequestRepository.Add(leaveRequest);
-            return leaveRequest.Id;
+
+            response.Success = true;
+            response.Message = "Leave request created successfully.";
+            response.Id = leaveRequest.Id;
+
+            return response;
         }
     }
 }

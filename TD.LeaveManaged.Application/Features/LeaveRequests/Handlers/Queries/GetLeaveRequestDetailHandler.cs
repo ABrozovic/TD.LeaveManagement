@@ -11,7 +11,7 @@ using TD.LeaveManaged.Application.Persistence.Contracts;
 
 namespace TD.LeaveManaged.Application.Features.LeaveRequests.Handlers.Queries
 {
-    public class GetLeaveRequestDetailHandler : IRequestHandler<GetLeaveRequestDetailRequest, LeaveRequestListDto>
+    public class GetLeaveRequestDetailHandler : IRequestHandler<GetLeaveRequestDetailRequest, LeaveRequestDto>
     {
         private readonly ILeaveRequestRepository _leaveRequestRepository;
         private readonly IMapper _mapper;
@@ -21,10 +21,10 @@ namespace TD.LeaveManaged.Application.Features.LeaveRequests.Handlers.Queries
             _leaveRequestRepository = leaveRequestRepository;
             _mapper = mapper;
         }
-        public async Task<LeaveRequestListDto> Handle(GetLeaveRequestDetailRequest request, CancellationToken cancellationToken)
+        public async Task<LeaveRequestDto> Handle(GetLeaveRequestDetailRequest request, CancellationToken cancellationToken)
         {
             var leaveRequest = await _leaveRequestRepository.Get(request.Id);
-            return _mapper.Map<LeaveRequestListDto>(leaveRequest);
+            return _mapper.Map<LeaveRequestDto>(leaveRequest);
         }
     }
 }
